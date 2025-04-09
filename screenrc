@@ -1,0 +1,36 @@
+# set default encoding using utf8
+defutf8 on
+
+defencoding utf8
+encoding utf8 utf8
+
+# make .bashrc .profile /etc/profile files work in screen
+shell -${SHELL}
+
+# set startup message
+startup_message off
+term linux
+
+# turn off visual bell
+vbell off
+
+# set scrollback
+defscrollback 10240
+
+# set status bar
+# shelltitle "$|bash"
+hardstatus on
+hardstatus alwayslastline
+# caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
+# caption always "%{= kc}%H (system load: %l)%-21=%{= .m}%D %d.%m.%Y %0c"
+# caption always "%{= kw}%-w%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+w %=%d %M %0c %{g}%H%{-}"
+
+# hardstatus string '%{= kG}[ %Y/%m/%d %{G}%c:%s %{g}][%= %{= kw}%?%-Lw%?%{Y}%n*%f%t %{K}%?%+Lw%?%= %{kG}]'
+hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{Y}%n*%f%t %{K}%?%+Lw%?%= %{kG}][%{kG} %l %Y/%m/%d %{kG}][ %{G}%c:%s %{g}]'
+# hardstatus string '%{= kg}[%= %{= kw}%?%-Lw%?%{Y}%n*%f%t %{K}%?%+Lw%?%= %{g}][%{kG} %D %Y/%m/%d %{g}][ %{G}%c:%s %{g}]'
+
+# solove scroll bug
+termcapinfo xterm|xterms|xs ti@:te@ 
+
+# rebind command key to Ctrl-x
+escape ^XX

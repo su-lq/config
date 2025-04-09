@@ -1,0 +1,66 @@
+XTerm*termName: xterm-256color
+XTerm*geometry: 100x44
+XTerm*scrollBar: false
+XTerm*visualBell: false
+XTerm*marginBell: false
+XTerm*alwaysHighlight: false
+XTerm*loginshell: true
+XTerm*cursorBlink: false
+XTerm*borderLess: true
+XTerm*saveLines: 102400
+XTerm*disallowedWindowOps: 20,21,SetXprop
+XTerm*selectToClipboard: true
+
+XTerm*VT100.Translations: #override \
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD) \n
+    ! <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    ! Ctrl <KeyPress> P: print() \n
+
+XTerm*colorBDMode: false
+XTerm*colorBD: white
+XTerm*colorULMode: false
+XTerm*colorUL: yellow
+
+XTerm*background: rgb:26/32/38
+XTerm*foreground: rgb:ff/ff/ff
+
+XTerm*color0:     rgb:00/00/00
+XTerm*color1:     rgb:d3/62/65
+XTerm*color2:     rgb:ae/ce/91
+XTerm*color3:     rgb:e7/e1/8c
+XTerm*color4:     rgb:7a/7a/b0
+XTerm*color5:     rgb:96/3c/59
+XTerm*color6:     rgb:41/81/79
+XTerm*color7:     rgb:be/be/be
+XTerm*color8:     rgb:66/66/66
+XTerm*color9:     rgb:ef/81/71
+XTerm*color10:    rgb:e5/f7/79
+XTerm*color11:    rgb:ff/f7/99
+XTerm*color12:    rgb:41/86/be
+XTerm*color13:    rgb:ef/9e/be
+XTerm*color14:    rgb:71/be/be
+XTerm*color15:    rgb:ff/ff/ff
+
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+
+Xft.dpi: 96
+
+! XTerm*locale: true
+XTerm.locale: zh_CN.UTF-8
+XTerm*utf8: true
+XTerm*utf8Title: true
+
+XTerm*faceName: DejaVuSansMono:antialias=true:pixelsize=16
+XTerm*faceNameDoublesize: DroidSansMono:antialias=true:pixelsize=16
+
+XTerm*xftAntialias: true
+XTerm*cjkWidth: false
+
+XTerm*faceSize: 16
+XTerm*faceSize1: 16
+XTerm*faceSize2: 16
+XTerm*faceSize3: 16
+XTerm*faceSize4: 16
+XTerm*faceSize5: 16
+XTerm*faceSize6: 16

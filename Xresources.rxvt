@@ -1,0 +1,70 @@
+! URxvt*termName: xterm-256color
+URxvt*geometry: 100x44
+URxvt*scrollBar: false
+URxvt*visualBell: false
+URxvt*marginBell: false
+URxvt*alwaysHighlight: false
+URxvt*loginshell: true
+URxvt*cursorBlink: false
+URxvt*borderLess: faljiowefjiaffwefafwef
+URxvt*saveLines: 102400
+URxvt*disallowedWindowOps: 20,21,SetXprop
+URxvt*selectToClipboard: true
+
+URxvt*VT100.Translations: #override \
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD) \n
+    ! <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    ! Ctrl <KeyPress> P: print() \n
+
+URxvt*colorBDMode: false
+URxvt*colorBD: white
+URxvt*colorULMode: false
+URxvt*colorUL: yellow
+
+URxvt*background: rgb:26/32/38
+URxvt*foreground: rgb:ff/ff/ff
+
+URxvt*color0:     rgb:00/00/00
+URxvt*color1:     rgb:d3/62/65
+URxvt*color2:     rgb:ae/ce/91
+URxvt*color3:     rgb:e7/e1/8c
+URxvt*color4:     rgb:7a/7a/b0
+URxvt*color5:     rgb:96/3c/59
+URxvt*color6:     rgb:41/81/79
+URxvt*color7:     rgb:be/be/be
+URxvt*color8:     rgb:66/66/66
+URxvt*color9:     rgb:ef/81/71
+URxvt*color10:    rgb:e5/f7/79
+URxvt*color11:    rgb:ff/f7/99
+URxvt*color12:    rgb:41/86/be
+URxvt*color13:    rgb:ef/9e/be
+URxvt*color14:    rgb:71/be/be
+URxvt*color15:    rgb:ff/ff/ff
+
+URxvt*metaSendsEscape: true
+URxvt*eightBitInput: false
+
+xft.dpi: 96
+xft.antialias: true
+xft.rgba: rgb
+xft.hinting: true
+xft.hintstyle: hintslight
+
+! URxvt*locale: true
+URxvt.locale: zh_CN.UTF-8
+URxvt*utf8: true
+URxvt*utf8Title: true
+
+URxvt*font: xft:DejaVuSansMono:antialias=true:size=12, xft:DroidSansFallback:antialias=true:size=16
+! URxvt*faceNameDoublesize: DroidSansFallback:antialias=true:pixelsize=16
+
+URxvt*xftAntialias: true
+URxvt*cjkWidth: false
+
+URxvt*faceSize: 16
+URxvt*faceSize1: 16
+URxvt*faceSize2: 16
+URxvt*faceSize3: 16
+URxvt*faceSize4: 16
+URxvt*faceSize5: 16
+URxvt*faceSize6: 16
