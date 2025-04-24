@@ -17,16 +17,18 @@ shopt -s globstar
 
 # Change the window title of X terminals
 case ${TERM} in
-    xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
-	;;
+    xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*|putty*)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+        ;;
     screen*)
-	PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
-	;;
+        PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
+        ;;
 esac
 
-case "$TERM" in 
-    xterm-color|*-256color) color_prompt=yes;;
+case "$TERM" in
+    xterm-color|*-256color)
+        color_prompt=yes
+        ;;
 esac
 
 if [ "$color_prompt" = yes ]; then
@@ -51,18 +53,18 @@ ex ()
 {
     if [ -f $1 ] ; then
         case $1 in
-            *.tar.bz2)   tar xjf $1   ;;
-            *.tar.gz)    tar xzf $1   ;;
-            *.bz2)       bunzip2 $1   ;;
-            *.rar)       unrar x $1     ;;
-            *.gz)        gunzip $1    ;;
-            *.tar)       tar xf $1    ;;
-            *.tbz2)      tar xjf $1   ;;
-            *.tgz)       tar xzf $1   ;;
-            *.zip)       unzip $1     ;;
+            *.tar.bz2)   tar xjf $1;;
+            *.tar.gz)    tar xzf $1;;
+            *.bz2)       bunzip2 $1;;
+            *.rar)       unrar x $1;;
+            *.gz)        gunzip $1;;
+            *.tar)       tar xf $1;;
+            *.tbz2)      tar xjf $1;;
+            *.tgz)       tar xzf $1;;
+            *.zip)       unzip $1;;
             *.Z)         uncompress $1;;
-            *.7z)        7z x $1      ;;
-            *)           echo "'$1' cannot be extracted via ex()" ;;
+            *.7z)        7z x $1;;
+            *)           echo "'$1' cannot be extracted via ex()";;
         esac
     else
         echo "'$1' is not a valid file"
@@ -80,20 +82,20 @@ colors()
 
     # foreground colors
     for fgc in {30..37}; do
-	# background colors
-	for bgc in {40..47}; do
-	    fgc=${fgc#37} # white
-	    bgc=${bgc#40} # black
+        # background colors
+        for bgc in {40..47}; do
+            fgc=${fgc#37} # white
+            bgc=${bgc#40} # black
 
-	    vals="${fgc:+$fgc;}${bgc}"
-	    vals=${vals%%;}
+            vals="${fgc:+$fgc;}${bgc}"
+            vals=${vals%%;}
 
-	    seq0="${vals:+\e[${vals}m}"
-	    printf "  %-9s" "${seq0:-(default)}"
-	    printf " ${seq0}TEXT\e[m"
-	    printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
-	done
-	echo; echo
+            seq0="${vals:+\e[${vals}m}"
+            printf "  %-9s" "${seq0:-(default)}"
+            printf " ${seq0}TEXT\e[m"
+            printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+        done
+        echo; echo
     done
 }
 
@@ -114,6 +116,7 @@ export YAOURT_COLORS='nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+
     # export GREP_OPTIONS='--color=always'
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
